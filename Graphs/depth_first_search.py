@@ -1,8 +1,6 @@
 from collections import defaultdict
 class Graph:
-    ```
-    This function creates a graph 
-    ```
+    # Graph Traversal using Depth first Search
     def __init__(self,num_nodes):
         self.graph = defaultdict(list)
         self.num_nodes = num_nodes
