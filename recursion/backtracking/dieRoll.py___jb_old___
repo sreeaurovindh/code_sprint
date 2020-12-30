@@ -1,0 +1,12 @@
+def diehelper(dice,chosen):
+    if dice == 0:
+        print(chosen)
+    else:
+        for i in range(1,4):
+            chosen.append(i)
+
+            diehelper(dice-1,chosen)
+
+            chosen = chosen[:-1]
+
+diehelper(2,[])
