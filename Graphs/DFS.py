@@ -27,3 +27,16 @@ def matrix_transpose():
         print(row)
 
 dfs_iter(graph)
+
+
+def run_dfs(self,v):
+    visited = [False] * len(self.graph)
+    self.dfs_util(v,visited)
+    
+def dfs_util(self,v,visited):
+    visited[v] = True
+    print(v)
+    
+    for i in self.graph[v]:
+        if visited[i] == False:
+            self.dfs_util(self.v,visited)

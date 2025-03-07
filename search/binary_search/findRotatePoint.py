@@ -1,4 +1,4 @@
-def findRotatedIndexHelper(arr,item,lo,hi):
+ogsdef findRotatedIndexHelper(arr,item,lo,hi):
     if hi <= lo:
         return -1
     mid = (lo + hi)//2

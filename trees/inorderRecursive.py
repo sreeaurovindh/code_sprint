@@ -1,4 +1,4 @@
-from treeNode import treeNode
+
 def inorder(root,result):
     if not root:
         return

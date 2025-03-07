@@ -95,6 +95,21 @@ def post_order(root):
 
 ```
 
+   def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        if root is None:
+            return result
+        stack = []
+        stack.append(root)
+        while len(stack) > 0 :
+            curr = stack.pop()
+            result.append(curr.val)
+            if curr.left is not None:
+                stack.append(root.left)
+            if curr.right is not None:
+                stack.append(root.right)
+        return list
+
 ## Level Order - Recursive
 
 ```python

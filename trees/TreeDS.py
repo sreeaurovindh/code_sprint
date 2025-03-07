@@ -15,24 +15,24 @@ def creatBTree(data, index):
         pNode.right = creatBTree(data, 2 * index + 2) # [2, 5, 12, 25, ...]
     return pNode
 
-class Solution:
-    def inorderTraversal(self, root):
-        if root is None:
-            return None
-        stack = deque([root])
-        current  = None
-        result = []
-        while len(stack) != 0 or current is not None:
-            while current is not None:
-                stack.append(current)
-                current = current.left
-            current = stack.pop()
-            result.append(current.val);
-            current = current.right
-        return result
-    
-t = Solution()
-lst_inp = [1,None,2,3]
-root = creatBTree(lst_inp,0)
-print(t.inorderTraversal(root))
 
+class Solution:
+    def postorderTraversal(self, root):
+        result = []
+        if root is None:
+            return result
+        stack = []
+        stack.append(root)
+        while len(stack) > 0 :
+            curr = stack.pop()
+            result.append(curr.val)
+            if curr.left is not None:
+                stack.append(root.left)
+            if curr.right is not None:
+                stack.append(root.right)
+        return list
+
+t = Solution()
+lst_inp = [3,5,1,6,2,0,8,None,None,7,4]
+root = creatBTree(lst_inp,0)
+t.distanceK(root,TreeNode(5),2)
