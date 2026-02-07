@@ -1,0 +1,44 @@
+Sliding window problems:
+
+1. Best time to buy and sell stock
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        l, r = 0, 1
+        maxP = 0
+
+        while r < len(prices):
+            if prices[l] < prices[r]:
+                profit = prices[r] - prices[l]
+                maxP = max(maxP, profit)
+            else:
+                l = r
+            r += 1
+        return maxP
+
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        maxP = 0
+        minBuy = prices[0]
+
+        for sell in prices:
+            maxP = max(maxP, sell - minBuy)
+            minBuy = min(minBuy, sell)
+        return maxP
+
+2. Lenght of Log
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        mp = {}
+        l = 0
+        res = 0
+
+        for r in range(len(s)):
+            if s[r] in mp:
+                l = max(mp[s[r]] + 1, l)
+            mp[s[r]] = r
+            res = max(res, r - l + 1)
+        return res
